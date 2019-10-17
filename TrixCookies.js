@@ -16,11 +16,11 @@ TrixCookies.launch = function(){
 
 	Game.customStatsMenu.push(function(){
 		CCSE.AppendStatsVersionNumber("TrixCookies", TrixCookies.version);
-	});'z
+	});'
 	
-	last = CCSE.NewAchievement('Sweet Science', 'Harvest <b>5</b> bifurcated sugar lumps.', [1, 1, iconsURL]); 
-	last = CCSE.NewAchievement('Sugar Atom Splitter', 'Harvest <b>15</b> bifurcated sugar lumps.', [1, 2, iconsURL]); 
-	last = CCSE.NewAchievement('Schizomainac', 'Harvest <b>50</b> bifurcated sugar lumps.', [1, 3, iconsURL]); 
+	CCSE.NewAchievement('Sweet Science', 'Harvest <b>5</b> bifurcated sugar lumps.', [1, 1, iconsURL]); 
+	CCSE.NewAchievement('Sugar Atom Splitter', 'Harvest <b>15</b> bifurcated sugar lumps.', [1, 2, iconsURL]); 
+	CCSE.NewAchievement('Schizomainac', 'Harvest <b>50</b> bifurcated sugar lumps.', [1, 3, iconsURL]); 
 	TrixCookies.isLoaded = 1;
 };
 
