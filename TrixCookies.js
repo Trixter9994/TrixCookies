@@ -21,11 +21,11 @@ TrixCookies.launch = function(){
 	//Bifurcated Achievments
 	CCSE.NewAchievement('Sweet Genetics', 'Harvest <b>5</b> bifurcated sugar lumps.', [0,0,iconsURL]); 
 	CCSE.NewAchievement('Sugar Atom Splitter', 'Harvest <b>15</b> bifurcated sugar lumps.', [0,1,iconsURL]); 
-	CCSE.NewAchievement('Schizomainac', 'Harvest <b>50</b> bifurcated sugar lumps.', [0,2,iconsURL]); 
+	CCSE.NewAchievement('Schizomainac', 'Harvest <b>30</b> bifurcated sugar lumps.', [0,2,iconsURL]); 
 	//Meaty Achievments
 	CCSE.NewAchievement('Meaty Lumps', 'Harvest <b>5</b> meaty sugar lumps.', [1,0,iconsURL]); 
 	CCSE.NewAchievement('Bittersweet', 'Harvest <b>15</b> meaty sugar lumps.', [1,1,iconsURL]); 
-	CCSE.NewAchievement('Hyperactive Abomination', 'Harvest <b>50</b> meaty sugar lumps.', [1,2,iconsURL]); 
+	CCSE.NewAchievement('Hyperactive Abomination', 'Harvest <b>30</b> meaty sugar lumps.', [1,2,iconsURL]); 
 	//caramelized Achievments (Since 50 Caramel sugar lumps is statistically impossible to get I nerfed the achievments.)
 	CCSE.NewAchievement('Caramel Rush of 49', 'Harvest <b>3</b> caramalized sugar lumps.', [2,0,iconsURL]); 
 	CCSE.NewAchievement('Rivers of Caramel', 'Harvest <b>7</b> caramelized sugar lumps.', [2,1,iconsURL]); 
