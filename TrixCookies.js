@@ -21,6 +21,7 @@ TrixCookies.launch = function(){
 	CCSE.NewAchievement('Sweet Science', 'Harvest <b>5</b> bifurcated sugar lumps.', [1, 1, iconsURL]); 
 	CCSE.NewAchievement('Sugar Atom Splitter', 'Harvest <b>15</b> bifurcated sugar lumps.', [1, 2, iconsURL]); 
 	CCSE.NewAchievement('Schizomainac', 'Harvest <b>50</b> bifurcated sugar lumps.', [1, 3, iconsURL]); 
+	
 	TrixCookies.isLoaded = 1;
 };
 
