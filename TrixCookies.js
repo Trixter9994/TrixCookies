@@ -18,18 +18,23 @@ TrixCookies.launch = function(){
 		CCSE.AppendStatsVersionNumber(TrixCookies.name, TrixCookies.version);
 	});
 	
-	//Bifurcated Achievments
+	//Bifurcated Achievements
 	CCSE.NewAchievement('Sweet Genetics', 'Harvest <b>5</b> bifurcated sugar lumps.', [0,0,iconsURL]); 
-	CCSE.NewAchievement('Sugar Atom Splitter', 'Harvest <b>15</b> bifurcated sugar lumps.', [0,1,iconsURL]); 
-	CCSE.NewAchievement('Schizomainac', 'Harvest <b>30</b> bifurcated sugar lumps.', [0,2,iconsURL]); 
-	//Meaty Achievments
+	CCSE.NewAchievement('Sugar Atom Splitter', 'Harvest <b>10</b> bifurcated sugar lumps.', [0,1,iconsURL]); 
+	CCSE.NewAchievement('Schizomainac', 'Harvest <b>20</b> bifurcated sugar lumps.', [0,2,iconsURL]); 
+	//Meaty Achievements
 	CCSE.NewAchievement('Meaty Lumps', 'Harvest <b>5</b> meaty sugar lumps.', [1,0,iconsURL]); 
-	CCSE.NewAchievement('Bittersweet', 'Harvest <b>15</b> meaty sugar lumps.', [1,1,iconsURL]); 
-	CCSE.NewAchievement('Hyperactive Abomination', 'Harvest <b>30</b> meaty sugar lumps.', [1,2,iconsURL]); 
-	//caramelized Achievments (Since 50 Caramel sugar lumps is statistically impossible to get I nerfed the achievments.)
-	CCSE.NewAchievement('Caramel Rush of 49', 'Harvest <b>3</b> caramalized sugar lumps.', [2,0,iconsURL]); 
-	CCSE.NewAchievement('Rivers of Caramel', 'Harvest <b>7</b> caramelized sugar lumps.', [2,1,iconsURL]); 
-	CCSE.NewAchievement('Sweet, Sweet Goo', 'Harvest <b>15</b> caramelized sugar lumps.', [2,2,iconsURL]); 
+	CCSE.NewAchievement('Bittersweet', 'Harvest <b>10</b> meaty sugar lumps.', [1,1,iconsURL]); 
+	CCSE.NewAchievement('Hyperactive Abomination', 'Harvest <b>20</b> meaty sugar lumps.', [1,2,iconsURL]); 
+	//Caramelized Achievements 
+	CCSE.NewAchievement('Dripping Sugar', 'Harvest <b>5</b> caramalized sugar lumps.', [3,0,iconsURL]); 
+	CCSE.NewAchievement('Rivers of Caramel', 'Harvest <b>10</b> caramelized sugar lumps.', [3,1,iconsURL]); 
+	CCSE.NewAchievement('Sweet, Sweet Goo', 'Harvest <b>20</b> caramelized sugar lumps.', [3,2,iconsURL]);
+	//Golden Achievments(Since 20 gold sugar lumps is extremely difficult to get, I nerfed the achievments. Still very hard.)
+	CCSE.NewAchievement('Gold Rush', 'Harvest <b>3</b> golden sugar lumps.', [2,0,iconsURL]); 
+	CCSE.NewAchievement('Lucky Lumps', 'Harvest <b>7</b> golden sugar lumps.', [2,1,iconsURL]); 
+	CCSE.NewAchievement('You can stop now', 'Harvest <b>13</b> golden sugar lumps.', [2,2,iconsURL]); 
+
 	
 	TrixCookies.isLoaded = 1;
 };
