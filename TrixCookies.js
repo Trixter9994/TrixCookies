@@ -3,7 +3,7 @@ if (TrixCookies === undefined) var TrixCookies = {};
 if (typeof CCSE == 'undefined') Game.LoadMod('https://klattmose.github.io/CookieClicker/CCSE.js');
 
 TrixCookies.launch = function(){
-	var iconsURL = 'https://cdn.jsdelivr.net/gh/Trixter9994/TrixCookies@0.1.1/images/customIcons.png';
+	var iconsURL = 'https://trixter9994.github.io/TrixCookies/images/customIcons.png';
 	TrixCookies.version = "0.1";
 	TrixCookies.GameVersion = "2.021";
 	TrixCookies.name= "2.021";
