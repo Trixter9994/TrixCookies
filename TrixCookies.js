@@ -34,6 +34,7 @@ TrixCookies.launch = function(){
 	CCSE.NewAchievement('Gold Rush', 'Harvest <b>3</b> golden sugar lumps.', [2,0,iconsURL]); 
 	CCSE.NewAchievement('Lucky Lumps', 'Harvest <b>7</b> golden sugar lumps.', [2,1,iconsURL]); 
 	CCSE.NewAchievement('You can stop now', 'Harvest <b>13</b> golden sugar lumps.', [2,2,iconsURL]); 
+
 	
 	TrixCookies.isLoaded = 1;
 };
