@@ -16,11 +16,11 @@ TrixCookies.launch = function(){
 
 	Game.customStatsMenu.push(function(){
 		CCSE.AppendStatsVersionNumber(TrixCookies.name, TrixCookies.version);
-	});'
+	});
 	
-	//CCSE.NewAchievement('Sweet Genetics', 'Harvest <b>5</b> bifurcated sugar lumps.', "https://trixter9994.github.io/TrixCookies/images/Sweet_Genetics.png"); 
-	//CCSE.NewAchievement('Sugar Atom Splitter', 'Harvest <b>15</b> bifurcated sugar lumps.', "https://trixter9994.github.io/TrixCookies/images/Sugar_Atom_Splitter.png"); 
-	//CCSE.NewAchievement('Schizomainac', 'Harvest <b>50</b> bifurcated sugar lumps.', "https://trixter9994.github.io/TrixCookies/images/Schizomainiac.png"); 
+	CCSE.NewAchievement('Sweet Genetics', 'Harvest <b>5</b> bifurcated sugar lumps.', "https://trixter9994.github.io/TrixCookies/images/Sweet_Genetics.png"); 
+	CCSE.NewAchievement('Sugar Atom Splitter', 'Harvest <b>15</b> bifurcated sugar lumps.', "https://trixter9994.github.io/TrixCookies/images/Sugar_Atom_Splitter.png"); 
+	CCSE.NewAchievement('Schizomainac', 'Harvest <b>50</b> bifurcated sugar lumps.', "https://trixter9994.github.io/TrixCookies/images/Schizomainiac.png"); 
 	
 	TrixCookies.isLoaded = 1;
 };
