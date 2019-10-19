@@ -14,6 +14,12 @@ TrixCookies.launch = function(){
 		CCSE.AppendCollapsibleOptionsMenu("TrixCookies", "Test");
 	});*/
 	
+	//Define lump counters if none are saved 
+	if (TrixCookies.bifurcatedLumps==undefined) TrixCookies.bifurcatedLumps=0;
+	if (TrixCookies.caramelizedLumps==undefined) TrixCookies.caramelizedLumps=0;
+	if (TrixCookies.goldenLumps==undefined) TrixCookies.goldenLumps=0;
+	if (TrixCookies.meatyLumps==undefined) 	TrixCookies.meatyLumps=0;
+	
 	//Save and Loading
 	CCSE.customSave.push(function(){
 		alert("Save",CCSE.save.OtherMods.TrixCookies);
@@ -25,20 +31,14 @@ TrixCookies.launch = function(){
 		CCSE.save.OtherMods.TrixCookies.meatyLumps=TrixCookies.meatyLumps;
 	});
 	CCSE.customLoad.push(function(){
-		if(CCSE.save.OtherMods.TrixCookies) TrixCookies.config = CCSE.save.OtherMods.TrixCookies; else TrixCookies.config = {};
 		alert(CCSE.save.OtherMods.TrixCookies);
 		alert(CCSE.save.OtherMods.TrixCookies.bifurcatedLumps);
+		if(CCSE.save.OtherMods.TrixCookies) TrixCookies.config = CCSE.save.OtherMods.TrixCookies; else TrixCookies.config = {};
 		TrixCookies.bifurcatedLumps=CCSE.save.OtherMods.TrixCookies.bifurcatedLumps;
 		TrixCookies.caramelizedLumps=CCSE.save.OtherMods.TrixCookies.caramelizedLumps;
 		TrixCookies.goldenLumps=CCSE.save.OtherMods.TrixCookies.goldenLumps;
 		TrixCookies.meatyLumps=CCSE.save.OtherMods.TrixCookies.meatyLumps;
 	});
-	
-	//Define lump counters if none are saved 
-	if (TrixCookies.bifurcatedLumps==undefined) TrixCookies.bifurcatedLumps=0;
-	if (TrixCookies.caramelizedLumps==undefined) TrixCookies.caramelizedLumps=0;
-	if (TrixCookies.goldenLumps==undefined) TrixCookies.goldenLumps=0;
-	if (TrixCookies.meatyLumps==undefined) 	TrixCookies.meatyLumps=0;
 	
 	Game.customStatsMenu.push(function(){
 		CCSE.AppendStatsVersionNumber(TrixCookies.name, TrixCookies.version);
