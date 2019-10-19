@@ -7,17 +7,34 @@ TrixCookies.launch = function(){
 	TrixCookies.version = "0.1.12";
 	TrixCookies.gameversion = "2.021";
 	TrixCookies.name= "TrixCookies";
-	//Define lump counters
-	TrixCookies.bifurcatedLumps;
-	TrixCookies.caramelizedLumps;
-	TrixCookies.goldenLumps;
-	TrixCookies.meatyLumps;
 	//CCSE.ConfirmGameVersion(TrixCookies.name, TrixCookies.version, TrixCookies.GameVersion);
 	
 	//Research needed to use this. 
 	/*Game.customOptionsMenu.push(function(){
 		CCSE.AppendCollapsibleOptionsMenu("TrixCookies", "Test");
 	});*/
+	
+	//Save and Loading
+	CCSE.customSave.push(function(){
+		CCSE.save.OtherMods.MyMod = TrixCookies.config;
+		CCSE.save.OtherMods.TrixCookies.meatyLumps=TrixCookies.bifurcatedLumps;
+		CCSE.save.OtherMods.TrixCookies.meatyLumps=TrixCookies.caramelizedLumps;
+		CCSE.save.OtherMods.TrixCookies.meatyLumps=TrixCookies.goldenLumps;
+		CCSE.save.OtherMods.TrixCookies.meatyLumps=TrixCookies.meatyLumps;
+	});
+	CCSE.customLoad.push(function(){
+		if(CCSE.save.OtherMods.MyMod) TrixCookies.config = CCSE.save.OtherMods.TrixCookies; else TrixCookies.config = {};
+		TrixCookies.meatyLumps=CCSE.save.OtherMods.TrixCookies.bifurcatedLumps;
+		TrixCookies.meatyLumps=CCSE.save.OtherMods.TrixCookies.caramelizedLumps;
+		TrixCookies.meatyLumps=CCSE.save.OtherMods.TrixCookies.goldenLumps;
+		TrixCookies.meatyLumps=CCSE.save.OtherMods.TrixCookies.meatyLumps;
+	});
+	
+	//Define lump counters
+	if (TrixCookies.bifurcatedLumps==undefined) TrixCookies.bifurcatedLumps=0;
+	if (TrixCookies.caramelizedLumps==undefined) TrixCookies.caramelizedLumps=0;
+	if (TrixCookies.goldenLumps==undefined) TrixCookies.goldenLumps=0;
+	if (TrixCookies.meatyLumps==undefined) 	TrixCookies.meatyLumps=0;
 	
 	Game.customStatsMenu.push(function(){
 		CCSE.AppendStatsVersionNumber(TrixCookies.name, TrixCookies.version);
@@ -68,26 +85,26 @@ TrixCookies.launch = function(){
 		if (Game.lumpCurrentType==1){
 			Game.Win('Sugar sugar'); 
 			if(TrixCookies.bifurcatedLumps>=5){Game.Win('Sweet Genetics')};
-			if(TrixCookies.bifurcatedLumps>=10){Game.Win('Sugar Atom Splitter')}
-			if(TrixCookies.bifurcatedLumps>=20){Game.Win('Schizomainac')}
+			if(TrixCookies.bifurcatedLumps>=10){Game.Win('Sugar Atom Splitter')};
+			if(TrixCookies.bifurcatedLumps>=20){Game.Win('Schizomainac')};
 		}
 		else if (Game.lumpCurrentType==2){
 			Game.Win('All-natural cane sugar');
 			if(TrixCookies.goldenLumps>=3){Game.Win('Gold Rush')};
-			if(TrixCookies.goldenLumps>=7){Game.Win('Lucky Lumps')}
-			if(TrixCookies.goldenLumps>=13){Game.Win('You can stop now')}
+			if(TrixCookies.goldenLumps>=7){Game.Win('Lucky Lumps')};
+			if(TrixCookies.goldenLumps>=13){Game.Win('You can stop now')};
 		}
 		else if (Game.lumpCurrentType==3){
 			Game.Win('Sweetmeats');
 			if(TrixCookies.meatyLumps>=5){Game.Win('Meaty Lumps')};
-			if(TrixCookies.meatyLumps>=10){Game.Win('Bittersweet')}
-			if(TrixCookies.meatyLumps>=20){Game.Win('Hyperactive Abomination')}
+			if(TrixCookies.meatyLumps>=10){Game.Win('Bittersweet')};
+			if(TrixCookies.meatyLumps>=20){Game.Win('Hyperactive Abomination')};
 		}
 		else if (Game.lumpCurrentType==4){ 
 			Game.Win('Maillard reaction');
 			if(TrixCookies.caramelizedLumps>=5){Game.Win('Dripping Sugar')};
-			if(TrixCookies.caramelizedLumps>=10){Game.Win('Rivers of Caramel')}
-			if(TrixCookies.caramelizedLumps>=20){Game.Win('Sweet, Sweet Goo')}
+			if(TrixCookies.caramelizedLumps>=10){Game.Win('Rivers of Caramel')};
+			if(TrixCookies.caramelizedLumps>=20){Game.Win('Sweet, Sweet Goo')};
 		}
 			
 		if (!silent){
