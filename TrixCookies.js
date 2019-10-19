@@ -4,7 +4,7 @@ if (typeof CCSE == 'undefined') Game.LoadMod('https://klattmose.github.io/Cookie
 
 TrixCookies.launch = function(){
 	var iconsURL = 'https://trixter9994.github.io/TrixCookies/images/customIcons.png';
-	TrixCookies.version = "0.1";
+	TrixCookies.version = "0.1.12";
 	TrixCookies.gameversion = "2.021";
 	TrixCookies.name= "TrixCookies";
 	//Define lump counters
@@ -46,7 +46,7 @@ TrixCookies.launch = function(){
 		Game.lumpT=Date.now();
 		var total=amount;
 		if (Game.lumpCurrentType==1 && Game.Has('Sucralosia Inutilis') && Math.random()<0.05) total*=2;
-		else if (Game.lumpCurrentType==1){total*=choose([1,2]);TrixCookies.bifurcatedLumps++};
+		else if (Game.lumpCurrentType==1){total*=choose([1,2]);TrixCookies.bifurcatedLumps++}
 		else if (Game.lumpCurrentType==2){
 			TrixCookies.goldenLumps++;//Lucky boi
 			total*=choose([2,3,4,5,6,7]);
@@ -55,7 +55,7 @@ TrixCookies.launch = function(){
 			if (Game.prefs.popups) Game.Popup('Sugar blessing activated!');
 			else Game.Notify('Sugar blessing activated!','Your cookies have been doubled.<br>+10% golden cookies for the next 24 hours.',[29,16]);
 		}
-		else if (Game.lumpCurrentType==3) {total*=choose([0,0,1,2,2]);TrixCookies.meatyLumps++};
+		else if (Game.lumpCurrentType==3) {total*=choose([0,0,1,2,2]);TrixCookies.meatyLumps++}
 		else if (Game.lumpCurrentType==4){
 			TrixCookies.caramelizedLumps++;
 			total*=choose([1,2,3]);
