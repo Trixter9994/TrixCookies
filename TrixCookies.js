@@ -7,13 +7,18 @@ TrixCookies.launch = function(){
 	TrixCookies.version = "0.1";
 	TrixCookies.gameversion = "2.021";
 	TrixCookies.name= "TrixCookies";
+	//Define lump counters
+	TrixCookies.bifurcatedLumps;
+	TrixCookies.caramelizedLumps;
+	TrixCookies.goldenLumps;
+	TrixCookies.meatyLumps;
 	//CCSE.ConfirmGameVersion(TrixCookies.name, TrixCookies.version, TrixCookies.GameVersion);
 	
 	//Research needed to use this. 
 	/*Game.customOptionsMenu.push(function(){
 		CCSE.AppendCollapsibleOptionsMenu("TrixCookies", "Test");
 	});*/
-
+	
 	Game.customStatsMenu.push(function(){
 		CCSE.AppendStatsVersionNumber(TrixCookies.name, TrixCookies.version);
 	});
@@ -34,7 +39,65 @@ TrixCookies.launch = function(){
 	CCSE.NewAchievement('Gold Rush', 'Harvest <b>3</b> golden sugar lumps.', [2,0,iconsURL]); 
 	CCSE.NewAchievement('Lucky Lumps', 'Harvest <b>7</b> golden sugar lumps.', [2,1,iconsURL]); 
 	CCSE.NewAchievement('You can stop now', 'Harvest <b>13</b> golden sugar lumps.', [2,2,iconsURL]); 
-
+	
+	//Rewrite Game.harvestLumps function to keep track of type of lump harvested
+	Game.harvestLumps=function(amount,silent){
+		if (!Game.canLumps()) return;
+		Game.lumpT=Date.now();
+		var total=amount;
+		if (Game.lumpCurrentType==1 && Game.Has('Sucralosia Inutilis') && Math.random()<0.05) total*=2;
+		else if (Game.lumpCurrentType==1){total*=choose([1,2]);TrixCookies.bifurcatedLumps++};
+		else if (Game.lumpCurrentType==2){
+			TrixCookies.goldenLumps++;//Lucky boi
+			total*=choose([2,3,4,5,6,7]);
+			Game.gainBuff('sugar blessing',24*60*60,1);
+			Game.Earn(Math.min(Game.cookiesPs*60*60*24,Game.cookies));
+			if (Game.prefs.popups) Game.Popup('Sugar blessing activated!');
+			else Game.Notify('Sugar blessing activated!','Your cookies have been doubled.<br>+10% golden cookies for the next 24 hours.',[29,16]);
+		}
+		else if (Game.lumpCurrentType==3) {total*=choose([0,0,1,2,2]);TrixCookies.meatyLumps++};
+		else if (Game.lumpCurrentType==4){
+			TrixCookies.caramelizedLumps++;
+			total*=choose([1,2,3]);
+			Game.lumpRefill=Date.now()-Game.getLumpRefillMax();
+			if (Game.prefs.popups) Game.Popup('Sugar lump cooldowns cleared!');
+			else Game.Notify('Sugar lump cooldowns cleared!','',[29,27]);
+		}
+		total=Math.floor(total);
+		Game.gainLumps(total);
+		if (Game.lumpCurrentType==1){
+			Game.Win('Sugar sugar'); 
+			if(TrixCookies.bifurcatedLumps>=5){Game.Win('Sweet Genetics')};
+			if(TrixCookies.bifurcatedLumps>=10){Game.Win('Sugar Atom Splitter')}
+			if(TrixCookies.bifurcatedLumps>=20){Game.Win('Schizomainac')}
+		}
+		else if (Game.lumpCurrentType==2){
+			Game.Win('All-natural cane sugar');
+			if(TrixCookies.goldenLumps>=3){Game.Win('Gold Rush')};
+			if(TrixCookies.goldenLumps>=7){Game.Win('Lucky Lumps')}
+			if(TrixCookies.goldenLumps>=13){Game.Win('You can stop now')}
+		}
+		else if (Game.lumpCurrentType==3){
+			Game.Win('Sweetmeats');
+			if(TrixCookies.meatyLumps>=5){Game.Win('Meaty Lumps')};
+			if(TrixCookies.meatyLumps>=10){Game.Win('Bittersweet')}
+			if(TrixCookies.meatyLumps>=20){Game.Win('Hyperactive Abomination')}
+		}
+		else if (Game.lumpCurrentType==4){ 
+			Game.Win('Maillard reaction');
+			if(TrixCookies.caramelizedLumps>=5){Game.Win('Dripping Sugar')};
+			if(TrixCookies.caramelizedLumps>=10){Game.Win('Rivers of Caramel')}
+			if(TrixCookies.caramelizedLumps>=20){Game.Win('Sweet, Sweet Goo')}
+		}
+			
+		if (!silent){
+			var rect=l('lumpsIcon2').getBoundingClientRect();Game.SparkleAt((rect.left+rect.right)/2,(rect.top+rect.bottom)/2-24);
+			if (total>0) Game.Popup('<small>+'+Beautify(total)+' sugar lump'+(total==1?'':'s')+'</small>',(rect.left+rect.right)/2,(rect.top+rect.bottom)/2-48);
+			else Game.Popup('<small>Botched harvest!</small>',(rect.left+rect.right)/2,(rect.top+rect.bottom)/2-4);
+			PlaySound('snd/pop'+Math.floor(Math.random()*3+1)+'.mp3',0.75);
+		}
+		Game.computeLumpTimes();
+	}
 	
 	TrixCookies.isLoaded = 1;
 };
