@@ -16,10 +16,9 @@ TrixCookies.launch = function(){
 	
 	//Save and Loading
 	CCSE.customSave.push(function(){
-		console.log("Save",CCSE.save.OtherMods.TrixCookies);
-		console.log("Save",CCSE.save.OtherMods.TrixCookies.bifurcatedLumps);
+		alert("Save",CCSE.save.OtherMods.TrixCookies);
+		alert("Save",CCSE.save.OtherMods.TrixCookies.bifurcatedLumps);
 		CCSE.save.OtherMods.TrixCookies= TrixCookies.config;
-		
 		CCSE.save.OtherMods.TrixCookies.bifurcatedLumps=TrixCookies.bifurcatedLumps;
 		CCSE.save.OtherMods.TrixCookies.caramelizedLumps=TrixCookies.caramelizedLumps;
 		CCSE.save.OtherMods.TrixCookies.goldenLumps=TrixCookies.goldenLumps;
@@ -27,8 +26,8 @@ TrixCookies.launch = function(){
 	});
 	CCSE.customLoad.push(function(){
 		if(CCSE.save.OtherMods.TrixCookies) TrixCookies.config = CCSE.save.OtherMods.TrixCookies; else TrixCookies.config = {};
-		console.log(CCSE.save.OtherMods.TrixCookies);
-		console.log(CCSE.save.OtherMods.TrixCookies.bifurcatedLumps);
+		alert(CCSE.save.OtherMods.TrixCookies);
+		alert(CCSE.save.OtherMods.TrixCookies.bifurcatedLumps);
 		TrixCookies.bifurcatedLumps=CCSE.save.OtherMods.TrixCookies.bifurcatedLumps;
 		TrixCookies.caramelizedLumps=CCSE.save.OtherMods.TrixCookies.caramelizedLumps;
 		TrixCookies.goldenLumps=CCSE.save.OtherMods.TrixCookies.goldenLumps;
