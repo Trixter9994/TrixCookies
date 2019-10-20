@@ -7,10 +7,7 @@ TrixCookies.launch = function(){
 	TrixCookies.version = "0.1.12";
 	TrixCookies.gameversion = "2.021";
 	TrixCookies.name= "TrixCookies";
-	TrixCookies.bifurcatedLumps;
-	TrixCookies.caramelizedLumps;
-	TrixCookies.goldenLumps;
-	TrixCookies.meatyLumps;
+	
 	//CCSE.ConfirmGameVersion(TrixCookies.name, TrixCookies.version, TrixCookies.GameVersion);
 	
 	//Research needed to use this. 
@@ -33,6 +30,12 @@ TrixCookies.launch = function(){
 		if(CCSE.save.OtherMods.goldenLumps) TrixCookies.goldenLumps=CCSE.save.OtherMods.goldenLumps; else TrixCookies.goldenLumps=0;
 		if(CCSE.save.OtherMods.meatyLumps) TrixCookies.meatyLumps=CCSE.save.OtherMods.meatyLumps; else TrixCookies.meatyLumps=0;
 	});
+	
+	//Define lump counters if not already defined
+	if (TrixCookies.bifurcatedLumps==undefined) TrixCookies.bifurcatedLumps=0;
+	if (TrixCookies.caramelizedLumps==undefined) TrixCookies.caramelizedLumps=0;
+	if (TrixCookies.goldenLumps==undefined) TrixCookies.goldenLumps=0;
+	if (TrixCookies.meatyLumps==undefined) TrixCookies.meatyLumps=0;
 	
 	Game.customStatsMenu.push(function(){
 		CCSE.AppendStatsVersionNumber(TrixCookies.name, TrixCookies.version);
