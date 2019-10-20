@@ -29,7 +29,7 @@ TrixCookies.launch = function(){
 		if(CCSE.save.OtherMods.caramelizedLumps) TrixCookies.caramelizedLumps=CCSE.save.OtherMods.caramelizedLumps; 
 		if(CCSE.save.OtherMods.goldenLumps) TrixCookies.goldenLumps=CCSE.save.OtherMods.goldenLumps; 
 		if(CCSE.save.OtherMods.meatyLumps) TrixCookies.meatyLumps=CCSE.save.OtherMods.meatyLumps; 
-	
+	});
 	//Define lump counters if not already defined
 	if (TrixCookies.bifurcatedLumps==undefined) TrixCookies.bifurcatedLumps=0;
 	if (TrixCookies.caramelizedLumps==undefined) TrixCookies.caramelizedLumps=0;
